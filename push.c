@@ -1,4 +1,7 @@
 #include "monty.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
 typedef struct stack_s
 {
@@ -13,11 +16,16 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void empiler(stack_t **stack, unsigned line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *p_nouveau = malloc(sizeof(*p_nouveau));
+	stack_t *p_new = malloc(sizeof *p_new);
 
-    p_nouveau->n = n;
-    p_nouveau->prev = *p_pile;
-	*p_pile = p_nouveau;
+	if (p_new != NULL)
+	{
+		p_new->n = line_number;
+		p_new->prev = *stack;
+		*stack = p_new;
+	}
+
+
 }
