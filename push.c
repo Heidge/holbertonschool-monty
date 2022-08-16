@@ -18,13 +18,15 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int line_number)
 {
+	stack_t *tmp;
 	stack_t *p_new = malloc(sizeof *p_new);
 
 	if (p_new != NULL)
 	{
-		p_new->n = line_number;
+		tmp = (*stack)->next;
 		p_new->prev = *stack;
-		*stack = p_new;
+		p_new->next = tmp;
 	}
+	(void)line_number;
 
 }
