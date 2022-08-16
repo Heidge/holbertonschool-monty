@@ -2,6 +2,6 @@
 
 void usage_error_nofile(void)
 {
-	printf("USAGE: monty file\n")
+	fprintf(stderr, "USAGE: monty file\n")
 	exit(EXIT_FAILURE);
 }
