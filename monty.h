@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
+void empiler(stack_t **stack, unsigned line_number);
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
