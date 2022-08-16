@@ -16,15 +16,14 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *p_new = malloc(sizeof *p_new);
+	stack_t *tmp = (*stack)->next;
 
-	if (p_new != NULL)
+	while (tmp)
 	{
-		p_new->n = line_number;
-		p_new->prev = *stack;
-		*stack = p_new;
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
 	}
-
+	(void)line_number;
 }
