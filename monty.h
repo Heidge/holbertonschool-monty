@@ -1,11 +1,8 @@
-#define monty_header
-#ifndef monty_header
-#include <stdarg.h>
+#define MONTY_H
+#ifndef MONTY_H
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-
-void empiler(stack_t **stack, unsigned line_number);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -36,5 +33,7 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void push();
 
 #endif
