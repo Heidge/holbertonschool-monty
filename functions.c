@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		free_stack(*stack);
 	}
-	s_new->n= atoi(token2);
+	s_new->n = atoi(token2);
 	s_new->prev = NULL;
 	if(*stack == NULL)
 	{
