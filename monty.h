@@ -1,8 +1,16 @@
-#define MONTY_H
-#ifndef MONTY_H
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef MONTY_HEADER
+#define MONTY_HEADER
+
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <unistd.h>
+#define _GNU_SOURCE
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -33,9 +41,20 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/** main */
+int main (int argc, char *argv[]);
+void monty_interpreter(FILE *fp);
+extern char *token2;
 
+/** op_functions */
+void opcode(char *token1, stack_t **stack, int counter);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *top);
+
+/** error_functions */
+void usage_error(void);
+void open_file_failure(void);
 
 
-#endif
+#endif /** MONTY_HEADER */
