@@ -7,6 +7,7 @@ void opcode(char *token1, stack_t **stack, int counter)
 	instruction_t list[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	while (list[i].opcode != NULL) /** boucle pour parcourir tout le tableau */
