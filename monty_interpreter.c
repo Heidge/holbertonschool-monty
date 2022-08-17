@@ -1,15 +1,18 @@
 #include "monty.h"
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+
+char *token2 = NULL; /** NULL */
 
 void monty_interpreter(FILE *fp)
 {
-	char *line == NULL; /** stocke le fichier */
-	size_t len = 0; /** taille du fichier */
+	char line[100]; /** stocke le fichier */
 	char *token1 = NULL; /** nom du fichier */
-	char *token2 = NULL; /** NULL */
-	stack_t *stack == NULL;
+	stack_t *stack = NULL;
 	int counter = 0;
 
-	while (getline(&line, &len, fp) != -1)
+	while (fgets(line, 100, fp))
 	{
 		counter++;
 		token1 = strtok(line, " \n");
@@ -17,5 +20,5 @@ void monty_interpreter(FILE *fp)
 		if (token1 != NULL)
 		opcode(token1, &stack, counter);
 	}
-	free(line);
+	free_stack(stack);
 }

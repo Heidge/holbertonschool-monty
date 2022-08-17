@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <signal.h>
 #include <unistd.h>
+#define _GNU_SOURCE
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -41,12 +43,18 @@ typedef struct instruction_s
 } instruction_t;
 /** main */
 int main (int argc, char *argv[]);
+void monty_interpreter(FILE *fp);
+extern char *token2;
 
 /** op_functions */
-
+void opcode(char *token1, stack_t **stack, int counter);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *top);
 
 /** error_functions */
-void error_nofile(void);
+void usage_error(void);
+void open_file_failure(void);
 
 
 #endif /** MONTY_HEADER */

@@ -1,3 +1,5 @@
+#include "monty.h"
+
 void opcode(char *token1, stack_t **stack, int counter)
 {
 	unsigned int i = 0;

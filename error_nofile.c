@@ -1,7 +1,7 @@
 #include "monty.h"
 
-void usage_error_nofile(void)
+void usage_error(void)
 {
-	fprintf(stderr, "USAGE: monty file\n")
+	printf("USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
