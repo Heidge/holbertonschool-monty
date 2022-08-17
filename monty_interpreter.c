@@ -1,7 +1,4 @@
 #include "monty.h"
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
 
 char *token2 = NULL; /** NULL */
 
