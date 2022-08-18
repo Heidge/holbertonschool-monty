@@ -7,7 +7,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (token2 == NULL)
 	{
 		free_stack(*stack);
-		errors(3, "namefile", line_number);
+		errors(5, "namefile", line_number);
 	}
 
 	s_new = malloc(sizeof(stack_t));
@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (s_new == NULL)
 	{
 		free_stack(*stack);
-		errors(2, "test", line_number);
+		errors(4, "test", line_number);
 	}
 
 	s_new->n = atoi(token2);
@@ -51,7 +51,7 @@ void pall(stack_t **stack, unsigned int line_number)
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if(*stack == NULL)
-	errors(1, "1", line_number);
+	errors(3, "1", line_number);
 
 	printf("%d\n", (*stack)->n);
 
@@ -63,7 +63,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		errors(4, "namefile", line_number);
+		errors(6, "namefile", line_number);
 	}
 	tmp = (*stack);
 	if (tmp->next == NULL)

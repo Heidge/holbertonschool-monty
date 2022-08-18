@@ -11,20 +11,29 @@ void errors(int id, char *file, int counter)
 	switch (id)
 	{
 	case 1:
-		fprintf(stderr, "L%d: can't pint, stack empty\n", counter);
+		(void)file;
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 		break;
 	case 2:
+		fprintf(stderr, "Error: Can't open file %s\n", file);
+		exit(EXIT_FAILURE);
+		break;
+	case 3:
+		fprintf(stderr, "L%d: can't pint, stack empty\n", counter);
+		exit(EXIT_FAILURE);
+		break;
+	case 4:
 		(void)file;
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 		break;
-	case 3:
+	case 5:
 		(void)file;
 		fprintf(stderr, "L%d: usage: push integer\n", counter);
 		exit(EXIT_FAILURE);
 		break;
-	case 4:
+	case 6:
 		(void)file;
 		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
 		exit(EXIT_FAILURE);
