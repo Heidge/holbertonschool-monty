@@ -1,4 +1,5 @@
 #include "monty.h"
+<<<<<<< HEAD
 /**
  * main - entry point
  * @ac: int variable
@@ -149,4 +150,3 @@ void check_push(stack_t **st, char **cmds, unsigned int ln)
 		i++;
 	}
 	push(st, atoi(cmds1));
-}
