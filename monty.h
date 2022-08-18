@@ -54,9 +54,7 @@ void sub(stack_t **, unsigned int);
 void add(stack_t **, unsigned int);
 void division(stack_t **, unsigned int);
 void mul(stack_t **, unsigned int);
-void mod(stack_t **, unsigned int);
-void pchar(stack_t **, unsigned int);
-void pstr(stack_t **, unsigned int);
+
 
 int _isdigit(int);
 void is_opcode(char *, stack_t **, unsigned int);
