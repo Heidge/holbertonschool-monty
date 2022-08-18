@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * main - entry point
  * @ac: int variable
@@ -38,6 +37,7 @@ int main(int ac, char **av)
 	fclose(fp);
 	return (0);
 }
+
 
 /**
  * parse - entry point
@@ -84,8 +84,7 @@ void is_opcode(char *buff, stack_t **st, unsigned int ln)
 	instruction_t opts[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
 		{"swap", swap}, {"nop", nop}, {"add", add}, {"sub", sub},
-		{"div", division}, {"mul", mul}, {"mod", mod}, {"pchar", pchar},
-		{"pstr", pstr},	{NULL, NULL}
+		{"div", division}, {"mul", mul}, {NULL, NULL}
 	};
 	int i = 0, j = 0, len, b = 0, len2;
 
@@ -141,7 +140,7 @@ void check_push(stack_t **st, char **cmds, unsigned int ln)
 	{
 		if (cmds1[0] == '-' && b == 0)
 			i++, b = 1;
-		if (_isdigit(cmds1[i]) == 0)
+		if (isdigit(cmds1[i]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", ln);
 			free(cmds), freestack(st);
