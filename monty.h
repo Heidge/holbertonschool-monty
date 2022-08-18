@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #ifndef MONTY_H
 #define MONTY_H
 #define _GNU_SOURCE
@@ -21,7 +20,6 @@
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
-<<<<<<< HEAD
  * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct stack_s
@@ -29,15 +27,6 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-=======
- * for stack, queues, LIFO, FIFO
- */
-typedef struct stack_s
-{
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
->>>>>>> d52e4727eb135b5fbd95bfd6cf6409ba63eaa816
 } stack_t;
 
 /**
@@ -46,7 +35,6 @@ typedef struct stack_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
-<<<<<<< HEAD
  * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
@@ -75,29 +63,3 @@ void freestack(stack_t **);
 void check_push(stack_t **, char **, unsigned int);
 
 #endif
-=======
- * for stack, queues, LIFO, FIFO
- */
-typedef struct instruction_s
-{
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
-/** main */
-int main (int argc, char *argv[]);
-void monty_interpreter(FILE *fp);
-extern char *token2;
-
-/** op_functions */
-void opcode(char *token1, stack_t **stack, int counter);
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t *top);
-
-/** error_functions */
-void usage_error(void);
-void open_file_failure(void);
-
-
-#endif /** MONTY_HEADER */
->>>>>>> d52e4727eb135b5fbd95bfd6cf6409ba63eaa816
