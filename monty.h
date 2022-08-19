@@ -63,6 +63,3 @@ void freestack(stack_t **);
 void check_push(stack_t **, char **, unsigned int);
 
 #endif
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
